@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kelola Keuangan Web</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Aplikasi Kelola Keuangan</title>
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
     <header>
-        <h1>Dicko Finance</h1>
+        <h1>MyFinancial App</h1>
     </header>
 
     <main class="container">
@@ -39,7 +41,7 @@
             </div>
         </section>
 
-        <section class="input-area">
+        <section class_name="input-area">
             <h2>📝 Catat Transaksi</h2>
             <form id="tx-form">
                 <input type="text" id="tx-deskripsi" placeholder="Deskripsi (cth: Beli Kopi)" required>
@@ -51,32 +53,34 @@
                 </select>
 
                 <select id="tx-dompet" required>
+                    <option value="" disabled selected>Pilih Dompet/Rekening</option>
                     <option value="tunai">Tunai</option>
                     <option value="bca">BCA</option>
                     <option value="mandiri">Mandiri</option>
+                    <option value="bni">BNI</option>
                     <option value="gopay">GoPay</option>
                     <option value="ovo">OVO</option>
                     <option value="dana">DANA</option>
+                    <option value="shopeepay">ShopeePay</option>
                 </select>
 
                 <button type="submit">Tambah Catatan</button>
             </form>
 
-            <h2>💰 Kelola Anggaran</h2>
+            <h2>💰 Kelola Anggaran Bulanan</h2>
             <form id="budget-form">
-                <input type="number" id="budget-bulanan" placeholder="Atur Anggaran Bulanan">
+                <input type="number" id="budget-bulanan" placeholder="Atur Anggaran (cth: 3000000)">
                 <button type="submit">Atur</button>
             </form>
         </section>
 
         <section class="laporan">
-            <h2>🧾 Riwayat Transaksi</h2>
+            <h2>🧾 Riwayat Transaksi (Laporan)</h2>
             <ul id="tx-list">
                 </ul>
         </section>
     </main>
 
-    <script src="app.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
-
 </html>
