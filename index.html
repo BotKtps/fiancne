@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelola Keuangan Web</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>MyFinancial App</h1>
+    </header>
+
+    <main class="container">
+        <section class="dashboard">
+            <h2>📊 Dashboard</h2>
+            <div class="summary">
+                <div class="card">
+                    <h3>Total Pemasukan</h3>
+                    <span id="total-pemasukan">Rp 0</span>
+                </div>
+                <div class="card">
+                    <h3>Total Pengeluaran</h3>
+                    <span id="total-pengeluaran">Rp 0</span>
+                </div>
+                <div class="card">
+                    <h3>Saldo Akhir</h3>
+                    <span id="saldo-akhir">Rp 0</span>
+                </div>
+                <div class="card">
+                    <h3>Sisa Anggaran</h3>
+                    <span id="sisa-anggaran">Rp 0</span>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="financeChart"></canvas>
+            </div>
+        </section>
+
+        <section class="input-area">
+            <h2>📝 Catat Transaksi</h2>
+            <form id="tx-form">
+                <input type="text" id="tx-deskripsi" placeholder="Deskripsi (cth: Beli Kopi)" required>
+                <input type="number" id="tx-jumlah" placeholder="Jumlah (cth: 25000)" required>
+                
+                <select id="tx-tipe" required>
+                    <option value="pemasukan">Pemasukan</option>
+                    <option value="pengeluaran" selected>Pengeluaran</option>
+                </select>
+
+                <select id="tx-dompet" required>
+                    <option value="tunai">Tunai</option>
+                    <option value="bca">BCA</option>
+                    <option value="mandiri">Mandiri</option>
+                    <option value="gopay">GoPay</option>
+                    <option value="ovo">OVO</option>
+                    <option value="dana">DANA</option>
+                </select>
+
+                <button type="submit">Tambah Catatan</button>
+            </form>
+
+            <h2>💰 Kelola Anggaran</h2>
+            <form id="budget-form">
+                <input type="number" id="budget-bulanan" placeholder="Atur Anggaran Bulanan">
+                <button type="submit">Atur</button>
+            </form>
+        </section>
+
+        <section class="laporan">
+            <h2>🧾 Riwayat Transaksi</h2>
+            <ul id="tx-list">
+                </ul>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
